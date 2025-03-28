@@ -63,21 +63,6 @@ def logistic_regression_NR(features, target, num_steps, tolerance):
 beta_est=logistic_regression_NR(simulated_features, simulated_labels, 100, 1e-6)
 print(beta_est)
 
-#check against the sklearn implementation
-clf = LogisticRegression(fit_intercept=False, solver='lbfgs')  
-clf.fit(simulated_features, simulated_labels)
-beta_sklearn = clf.coef_[0]  # shape: (n_features,)
-
-print("beta estimate:")
-print(beta_est)
-
-print("Sklearn beta:")
-print(beta_sklearn)
-
-# Difference
-diff = np.linalg.norm(beta_est - beta_sklearn)
-print("L2 norm of difference:", diff)
-
 ## Simulation study
 S=1000
 #generate labels y for every simulation
