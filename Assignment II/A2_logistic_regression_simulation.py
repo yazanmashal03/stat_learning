@@ -81,9 +81,10 @@ print(beta_mean)
 
 #make a histrogram for the MLE of beta_1 and beta_2
 plt.hist(beta_hist[:,0], bins=30)
-plt.title('Histogram of estimated beta_1')
+plt.title('Histogram of MLE for $\\beta_1$ with $n=1000$')
 plt.show()
 
 plt.hist(beta_hist[:,1], bins=30)
-plt.title('Histogram of estimated beta_2')
+plt.title('Histogram of MLE for $\\beta_2$ with $n=1000$')
 plt.show()
+

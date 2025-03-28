@@ -113,6 +113,8 @@ def logistic_regression_NR_penalized(features, target, num_steps=100, tolerance=
                 
     return beta
 
-beta_pen = logistic_regression_NR_penalized(x_train, y_train)
-print('This is the beta_pen:', beta_pen)
-beta_unpen = logistic_regression_NR(x_train, y_train)
+# accuracy of the mode
+beta_est=logistic_regression_NR_penalized(x_train, y_train, 100, 1e-6)
+y_hat=logistic_forecast(x_test, beta_est)
+acc=prediction_accuracy(y_hat,y_test)
+print(f"Accuracy of the model: {acc}")
