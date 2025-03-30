@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 
 #read the csv file
 df = pd.read_csv(r'mnist.csv')
-# Alternativelyyou can put the file in your working directory
+# Alternatively you can put the file in your working directory
 # If you load the csv file with another function make sure that the matrix of features X is defined as in the book
 # and the assignment and convert it to an numpy array
 
@@ -71,6 +71,7 @@ def prediction_accuracy(y_predicted,y_observed):
 #dimension of the problem
 p=x_train.shape[1]
 
+## C
 #Compute the ranks of the matrices X and X^T
 rank_x_train = np.linalg.matrix_rank(x_train)
 print(f"Rank of x_train: {rank_x_train} out of {x_train.shape[1]} features")
@@ -91,6 +92,11 @@ def logistic_regression_NR(features, target, num_steps=100, tolerance=1e-6):
                 
     return beta
 
+# The code that raises the error:
+# beta_est=logistic_regression_NR(x_train, y_train, 100, 1e-6)
+# print(beta_est)
+
+## D
 # Regularisation parameter
 lambda_0=1
 
