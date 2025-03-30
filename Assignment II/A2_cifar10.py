@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Mar 26 14:11:04 2025
+
+@author: lucas
+"""
+
 import numpy as np 
 import matplotlib.pyplot as plt
 from sklearn import linear_model
@@ -40,7 +47,7 @@ plot_image(X_train[image_nr,:],label_names[y_train[image_nr]])
 
 
 ## B - Fitting a logistic Regression model
-model = linear_model.LogisticRegression(penalty="l2",C=1e-9).fit(X_train, y_train)
+model = linear_model.LogisticRegression(penalty="l2",C=1e-8).fit(X_train, y_train)
 result = model.predict(X_test)
 print(sum(result == y_test))
 print(len(y_test))
@@ -62,6 +69,9 @@ print(mean_accuracies)
 
 plt.figure()
 plt.loglog(C_list,mean_accuracies)
+plt.xlabel("C")
+plt.ylabel("Accuracy")
+plt.title("Accuracy of the model for different values of C")
 plt.show()
 
 ## D - Crossvalidation with logarithmic scoring rule
@@ -77,7 +87,10 @@ for C in C_list:
 print(C_list)
 print(acc_arr) #Smaller score is better
 plt.figure()
-plt.loglog(C_list,acc_arr)  
+plt.loglog(C_list,acc_arr)
+plt.xlabel("C")
+plt.ylabel("Log loss")
+plt.title("Log loss of the model for different values of C")
 plt.show()
 
 ## E - Optimal value for C
