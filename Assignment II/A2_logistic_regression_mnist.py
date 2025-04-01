@@ -106,8 +106,8 @@ def logistic_regression_NR_penalized(features, target, num_steps=100, tolerance=
     for step in range(num_steps):
         p = logistic(np.dot(features, beta))
         W = p * (1 - p)
-        gradient = np.dot(features.T, target - p) - lambda_0 * beta
-        hessian = - np.dot(features.T, W[:, np.newaxis] * features) - lambda_0 * np.eye(features.shape[1])
+        gradient = np.dot(features.T, target - p) - 2*lambda_0 * beta
+        hessian = - np.dot(features.T, W[:, np.newaxis] * features) - 2*lambda_0 * np.eye(features.shape[1])
         try:
             delta = np.linalg.solve(hessian, gradient)
         except np.linalg.LinAlgError:
