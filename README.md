@@ -1,2 +1,2 @@
 # stat_learning
-Repo voor Assignment II voor Statistical Learning
+Repositories voor Assignment II voor Statistical Learning
