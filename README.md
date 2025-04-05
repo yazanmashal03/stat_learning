@@ -1,2 +1,1 @@
-# stat_learning
-Repositories voor Assignment II voor Statistical Learning
+Repository for Assignment II of Statistical Learning course at TU Delft.
